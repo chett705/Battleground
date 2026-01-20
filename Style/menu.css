@@ -1,0 +1,223 @@
+/* ================================
+   ROOT COLORS & THEME
+================================ */
+:root {
+    --green: #22c55e;
+    --green-dark: #16a34a;
+    --green-soft: #eefaf0;
+    --green-light: #f4fbf6;
+
+    --bg: #f6f8f5;
+    --card: #ffffff;
+    --border: #e5eee7;
+
+    --text: #111827;
+    --muted: #6b7280;
+}
+
+/* ================================
+   BASE
+================================ */
+body {
+    background: var(--bg);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--text);
+}
+
+h4, h5 {
+    color: #0f172a;
+}
+
+/* ================================
+   SEARCH
+================================ */
+#menuSearch {
+    border-radius: 14px;
+    padding: 12px 18px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+}
+
+#menuSearch::placeholder {
+    color: #9ca3af;
+}
+
+/* ================================
+   MENU TABLE CARD
+================================ */
+.menu-table {
+    background: var(--card);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    padding: 6px;
+}
+
+/* ================================
+   TABLE HEAD
+================================ */
+.table-head {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #7a9a83;
+    padding: 12px 16px;
+}
+
+/* ================================
+   MENU ROWS
+================================ */
+.menu-row {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    border-radius: 14px;
+    margin: 6px;
+    transition: background .2s ease, box-shadow .2s ease;
+    cursor: pointer;
+}
+
+.menu-row:hover {
+    background: var(--green-light);
+}
+
+/* Selected */
+.menu-row.selected {
+    background: var(--green-soft);
+    box-shadow: inset 4px 0 0 var(--green);
+}
+
+/* ================================
+   ITEM IMAGE
+================================ */
+.item-thumb {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* ================================
+   TEXT
+================================ */
+.menu-row strong {
+    font-size: 14px;
+    display: block;
+}
+
+.menu-row .small {
+    color: var(--muted);
+}
+
+/* ================================
+   CATEGORY PILLS
+================================ */
+.badge.category {
+    background: #fff1e6;
+    color: #c2410c;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge.category.bg-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge.category.bg-light {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+/* ================================
+   STATUS
+================================ */
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.bg-success {
+    background: var(--green) !important;
+}
+
+.bg-danger {
+    background: #ef4444 !important;
+    
+}
+
+/* ================================
+   EDIT PANEL
+================================ */
+.edit-pane {
+    background: var(--card);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+}
+
+/* Image */
+.edit-pane img {
+    border-radius: 14px;
+    max-height: 260px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ================================
+   FORM
+================================ */
+.form-label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 2px rgba(34,197,94,.15);
+}
+
+/* ================================
+   BUTTONS
+================================ */
+.btn-success {
+    background: var(--green);
+    border: none;
+    border-radius: 14px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.btn-success:hover {
+    background: var(--green-dark);
+}
+
+.btn-outline-secondary {
+    border-radius: 14px;
+    padding: 10px 20px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 991px) {
+    .menu-table {
+        margin-bottom: 20px;
+    }
+
+    .edit-pane {
+        margin-top: 20px;
+    }
+}

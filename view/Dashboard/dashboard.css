@@ -1,0 +1,28 @@
+/* Dashboard specific styles */
+.summary-card {
+    border: 1px solid rgba(15, 20, 31, 0.04);
+    border-radius: 10px;
+}
+
+.summary-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(32, 40, 45, 0.04);
+}
+
+.table-hover tbody tr:hover {
+    background: rgba(22, 199, 132, 0.03);
+}
+
+body.bg-white {
+    background: #f8faf9;
+}

@@ -1,0 +1,342 @@
+:root {
+    --primary-color: #16c784; /* accent green */
+    --hover-color: #12b679;
+    --body-bg: #f5f8f6; /* page background */
+    --sidebar-bg: #ffffff; /* sidebar background */
+    --text-color: #3688a6; /* primary text */
+    --muted: #6b7b80;
+    --border-color: rgba(47,63,69,0.06);
+    --hover-bg: rgba(22,199,132,0.06);
+}
+
+/* Brand/logo */
+.brand-logo img {
+    height: 44px;
+    width: 44px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.brand-text .brand-name {
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 18px;
+}
+.brand-text .brand-sub {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* Footer (user + add button) */
+.menu-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 12px;
+}
+.menu-footer .user {
+    gap: 10px;
+}
+.menu-footer .avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+}
+.menu-footer .user-name { font-weight: 600; color: var(--text-color); }
+.menu-footer .user-role { font-size: 12px; color: var(--muted); }
+
+/* Add button */
+.add-btn {
+    background: linear-gradient(90deg, var(--primary-color), var(--hover-color));
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Adjusted menu */
+.menu {
+    background: var(--sidebar-bg);
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 18px 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(30,41,46,0.06);
+    overflow-y: auto;
+}
+
+.menu-search input {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.menu ul.components {
+    padding: 10px 6px;
+    margin-top: 12px;
+}
+
+.menu ul li a {
+    color: black;
+    background: transparent;
+}
+
+/* Active state (light accent on left) */
+.menu ul li a:hover,
+.menu ul li.active > a {
+    color: var(--text-color);
+    background: rgba(22,199,132,0.04);
+}
+.menu ul li.active > a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+    background: linear-gradient(180deg,var(--primary-color),var(--hover-color));
+    border-radius: 0 4px 4px 0;
+}
+
+/* Small tweaks for nested items */
+.menu ul.collapse li a {
+    color: var(--muted);
+}
+.menu ul.collapse li a:hover { color: black; }
+
+/* Make icon accent stronger */
+.menu ul li a i { color: var(--primary-color); }
+
+/* Ensure the footer sticks to bottom */
+.menu.d-flex { display:flex; flex-direction:column; }
+.menu .mt-auto { margin-top: auto; }
+
+
+body {
+    background-color: var(--body-bg) !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.1px;
+}
+
+/* Khmer text specific styling */
+[lang="km"] {
+    font-family: 'Noto Sans Khmer', sans-serif;
+    font-size: 14.5px;
+    margin-left: 2px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.menu {
+    background: var(--sidebar-bg);
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--hover-color) var(--sidebar-bg);
+}
+
+.menu::-webkit-scrollbar {
+    width: 5px;
+}
+
+.menu::-webkit-scrollbar-track {
+    background: var(--sidebar-bg);
+}
+
+.menu::-webkit-scrollbar-thumb {
+    background-color: var(--hover-color);
+    border-radius: 20px;
+}
+
+.brand-logo {
+    padding: 0 25px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand-logo img {
+    height: 45px;
+    transition: transform 0.2s ease;
+}
+
+.brand-logo img:hover {
+    transform: scale(1.05);
+}
+
+.menu-search {
+    padding: 15px 25px;
+    position: relative;
+}
+
+.menu-search input {
+    width: 100%;
+    padding: 9px 12px;
+    padding-left: 38px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--hover-bg);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.menu-search::before {
+    content: "\f002";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color);
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+.menu-search input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(255,255,255,0.08);
+}
+
+.menu-search input::placeholder {
+    color: rgba(171, 185, 232, 0.7);
+    font-weight: 400;
+}
+
+.menu ul.components {
+    padding: 0;
+    margin-top: 15px;
+}
+
+.menu ul li {
+    position: relative;
+    margin: 3px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.menu ul li a {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    letter-spacing: -0.1px;
+    line-height: 1.4;
+    border-radius: 5px;
+    min-height: 42px;
+}
+
+.menu ul li a i {
+    width: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add spacing for Khmer labels */
+.menu ul li a span[lang="km"] {
+    position: relative;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.dropdown-toggle {
+    position: relative;
+    padding-right: 40px;
+}
+
+.dropdown-toggle::after {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.dropdown-toggle[aria-expanded="true"]::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.menu ul.collapse {
+    background: rgba(0,0,0,0.1);
+    margin: 5px 0;
+    border-radius: 5px;
+    padding: 3px 0;
+}
+
+.menu ul.collapse li {
+    margin: 0;
+}
+
+.menu ul.collapse li a {
+    padding: 8px 15px 8px 52px;
+    min-height: 38px;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(171, 185, 232, 0.9);
+}
+
+.menu ul.collapse li a:hover {
+    color: #807d7d;
+    background: var(--hover-bg);
+}
+
+/* Add smooth transition for dropdown */
+.collapse {
+    transition: all 0.2s ease;
+}
+
+/* Add hover effect for search input */
+.menu-search input:hover {
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* Active state styling */
+.menu ul li a:hover,
+.menu ul li.active > a {
+    color: #5e5c5c;
+    transition: 0.3s;
+    background: var(--hover-bg);
+}
+
+.menu ul li.active > a {
+    font-weight: 600;
+}
+.menu {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .menu {
+        width: 100%;
+    }
+}
+.sidebar {
+    transition: all 0.3s ease;
+}
