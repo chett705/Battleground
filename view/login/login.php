@@ -359,14 +359,14 @@ session_start();
             <p>Please login to your account</p>
         </div>
         
-        <form id="loginForm" action="../../action/Login/login.php" method="POST">
+        <form id="loginForm" action="../../Action/login/login.php" method="POST">
             <div class="form-group">
                 <label for="username" class="form-label">
-                    <i class="fas fa-user me-2"></i>Username
+                    <i class="fas fa-user me-2"></i>Name
                 </label>
                 <div class="input-group">
                     <i class="fas fa-user input-icon"></i>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                    <input type="text" class="form-control" id="username" name="name" placeholder="Enter your username" required>
                 </div>
             </div>
 

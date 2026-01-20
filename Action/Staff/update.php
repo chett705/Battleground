@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $id       = (int)($_POST['staff_id'] ?? 0);
 $name     = trim($_POST['name'] ?? '');
 $username = trim($_POST['username'] ?? '');
-$password = trim($_POST['password'] ?? '');
+ $password = password_hash($_POST['Password'],PASSWORD_DEFAULT);
 $role     = trim($_POST['role'] ?? '');
 $salary   = trim($_POST['salary'] ?? '');
 $status   = $_POST['status'] ?? 'active';
@@ -34,7 +34,7 @@ $stmt = mysqli_prepare($con, $sql);
 /* ✅ FIXED bind_param */
 mysqli_stmt_bind_param(
     $stmt,
-    "ssssdis",   // 5 strings + 1 integer
+    "ssssdsi",   // 5 strings + 1 integer
     $name,
     $username,
     $password,
@@ -52,6 +52,6 @@ if (mysqli_stmt_execute($stmt)) {
 }
 
 mysqli_stmt_close($stmt);
-mysqli_close($con);
+mysqli_close($con);     
 exit;
 ?>

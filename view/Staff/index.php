@@ -98,7 +98,7 @@ $staffs = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <div>
                     <input id="menuSearch"
                         class="form-control mb-3"
-                        placeholder="Search items by name, category...">
+                        placeholder="Search user by name">
 
                 </div>
 
@@ -217,9 +217,9 @@ $staffs = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                             </div>
                                                             <div class="col-6 mb-3">
                                                                 <label class="form-label">Status</label>
-                                                                <select name="action" id="" class="form-select">
-                                                                    <option value="activate" <?= ($res['status'] === 'active') ? 'selected' : '' ?>>Activate</option>
-                                                                    <option value="deactivate" <?= ($res['status'] === 'inactive') ? 'selected' : '' ?>>Inactive</option>
+                                                                <select name="status" id="" class="form-select">
+                                                                    <option value="active" <?= ($res['status'] === 'active') ? 'selected' : '' ?>>Activate</option>
+                                                                    <option value="inactive" <?= ($res['status'] === 'inactive') ? 'selected' : '' ?>>Inactive</option>
                                                                 </select>
                                                             </div>
                                                         </div>

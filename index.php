@@ -7,7 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
 </head>
+<!-- <?php 
+session_start();
 
+// If NOT logged in → redirect
+// if (!isset($_SESSION['IsLogin']) || $_SESSION['IsLogin'] !== true) {
+//     echo '<script>window.location.href = "view/Login/login.php";</script>';
+//     exit;
+// }
+// ?>-->
 
 
 <frameset rows="0%,100%" frameborder="0" border="0">
